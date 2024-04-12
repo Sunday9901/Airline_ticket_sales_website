@@ -1,0 +1,6 @@
+C:\Users\84359\Desktop\Doancoso_webbanvemaybay\Common\bin\Debug\Common.dll
+C:\Users\84359\Desktop\Doancoso_webbanvemaybay\Common\bin\Debug\Common.pdb
+C:\Users\84359\Desktop\Doancoso_webbanvemaybay\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\84359\Desktop\Doancoso_webbanvemaybay\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\84359\Desktop\Doancoso_webbanvemaybay\Common\obj\Debug\Common.dll
+C:\Users\84359\Desktop\Doancoso_webbanvemaybay\Common\obj\Debug\Common.pdb

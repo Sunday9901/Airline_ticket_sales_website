@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="web_banvemaybayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Binhluan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="binhluan" Type="nvarchar" MaxLength="250" />
+    <Property Name="idtaikhoan" Type="int" />
+    <Property Name="idTraloi" Type="int" />
+    <Property Name="ngaybl" Type="datetime" />
+    <Property Name="sosao" Type="int" />
+  </EntityType>
+  <EntityType Name="Chucvu">
+    <Key>
+      <PropertyRef Name="IDchucvu" />
+    </Key>
+    <Property Name="IDchucvu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenCV" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Chuyenbay">
+    <Key>
+      <PropertyRef Name="IDchuyenbay" />
+    </Key>
+    <Property Name="IDchuyenbay" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Diadiemdi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Diadiemden" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ngaydi" Type="datetime" />
+    <Property Name="Ngayve" Type="datetime" />
+    <Property Name="Giatien" Type="float" />
+    <Property Name="IDhang" Type="int" />
+    <Property Name="PhoThong" Type="int" />
+    <Property Name="ThuongGia" Type="int" />
+  </EntityType>
+  <EntityType Name="Dattruoc">
+    <Key>
+      <PropertyRef Name="IDdattruoc" />
+    </Key>
+    <Property Name="IDdattruoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayDat" Type="datetime" />
+    <Property Name="Tinhtrang" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDtaikhoan" Type="int" />
+  </EntityType>
+  <EntityType Name="DiaDiem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DiaDiem" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HangHK">
+    <Key>
+      <PropertyRef Name="IDhang" />
+    </Key>
+    <Property Name="IDhang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hinhanh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hangve">
+    <Key>
+      <PropertyRef Name="IDhangve" />
+    </Key>
+    <Property Name="IDhangve" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenHangve" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gia" Type="float" />
+  </EntityType>
+  <EntityType Name="HanhKhach">
+    <Key>
+      <PropertyRef Name="IDhanhkhach" />
+    </Key>
+    <Property Name="IDhanhkhach" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Tenhanhkhach" Type="nvarchar" MaxLength="100" />
+    <Property Name="Gioitinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="SDT" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Hanhli">
+    <Key>
+      <PropertyRef Name="IDhanhli" />
+    </Key>
+    <Property Name="IDhanhli" Type="int" Nullable="false" />
+    <Property Name="Kg" Type="varchar" MaxLength="50" />
+    <Property Name="Giatien" Type="float" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="IDtaikhoan" />
+    </Key>
+    <Property Name="IDtaikhoan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="HovaTen" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="SDT" Type="int" />
+    <Property Name="IDchucvu" Type="int" />
+  </EntityType>
+  <EntityType Name="TTlienhe">
+    <Key>
+      <PropertyRef Name="IDlienhe" />
+    </Key>
+    <Property Name="IDlienhe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="int" />
+  </EntityType>
+  <EntityType Name="Ve">
+    <Key>
+      <PropertyRef Name="IDve" />
+    </Key>
+    <Property Name="IDve" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDdattruoc" Type="int" />
+    <Property Name="IDchuyenbay" Type="int" />
+    <Property Name="Tinhtrang" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDlienhe" Type="int" />
+    <Property Name="IDhanhli" Type="int" />
+    <Property Name="Ngaydatve" Type="datetime" />
+    <Property Name="Gia" Type="float" />
+    <Property Name="IDhangve" Type="int" />
+    <Property Name="Tienphat" Type="float" />
+    <Property Name="Sove" Type="int" />
+    <Property Name="Hoangtra" Type="float" />
+    <Property Name="IDchuyenbayve" Type="int" />
+    <Property Name="IDhanhKhach" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK_Binhluan_TaiKhoan">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="Binhluan" Type="Self.Binhluan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="IDtaikhoan" />
+      </Principal>
+      <Dependent Role="Binhluan">
+        <PropertyRef Name="idtaikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Booking_User">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="Dattruoc" Type="Self.Dattruoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="IDtaikhoan" />
+      </Principal>
+      <Dependent Role="Dattruoc">
+        <PropertyRef Name="IDtaikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chuyenbay_HangHK">
+    <End Role="HangHK" Type="Self.HangHK" Multiplicity="0..1" />
+    <End Role="Chuyenbay" Type="Self.Chuyenbay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHK">
+        <PropertyRef Name="IDhang" />
+      </Principal>
+      <Dependent Role="Chuyenbay">
+        <PropertyRef Name="IDhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaiKhoan_Chucvu">
+    <End Role="Chucvu" Type="Self.Chucvu" Multiplicity="0..1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chucvu">
+        <PropertyRef Name="IDchucvu" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="IDchucvu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ticket_Booking">
+    <End Role="Dattruoc" Type="Self.Dattruoc" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dattruoc">
+        <PropertyRef Name="IDdattruoc" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="IDdattruoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ticket_Filght">
+    <End Role="Chuyenbay" Type="Self.Chuyenbay" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chuyenbay">
+        <PropertyRef Name="IDchuyenbay" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="IDchuyenbay" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ve_Hangve">
+    <End Role="Hangve" Type="Self.Hangve" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hangve">
+        <PropertyRef Name="IDhangve" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="IDhangve" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ve_HanhKhach1">
+    <End Role="HanhKhach" Type="Self.HanhKhach" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HanhKhach">
+        <PropertyRef Name="IDhanhkhach" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="IDhanhKhach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ve_Hanhli">
+    <End Role="Hanhli" Type="Self.Hanhli" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hanhli">
+        <PropertyRef Name="IDhanhli" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="IDhanhli" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ve_TTlienhe">
+    <End Role="TTlienhe" Type="Self.TTlienhe" Multiplicity="0..1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTlienhe">
+        <PropertyRef Name="IDlienhe" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="IDlienhe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="web_banvemaybayModelStoreContainer">
+    <EntitySet Name="Binhluan" EntityType="Self.Binhluan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chucvu" EntityType="Self.Chucvu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chuyenbay" EntityType="Self.Chuyenbay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dattruoc" EntityType="Self.Dattruoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiaDiem" EntityType="Self.DiaDiem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HangHK" EntityType="Self.HangHK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hangve" EntityType="Self.Hangve" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HanhKhach" EntityType="Self.HanhKhach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hanhli" EntityType="Self.Hanhli" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TTlienhe" EntityType="Self.TTlienhe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ve" EntityType="Self.Ve" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Binhluan_TaiKhoan" Association="Self.FK_Binhluan_TaiKhoan">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="Binhluan" EntitySet="Binhluan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Booking_User" Association="Self.FK_Booking_User">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="Dattruoc" EntitySet="Dattruoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chuyenbay_HangHK" Association="Self.FK_Chuyenbay_HangHK">
+      <End Role="HangHK" EntitySet="HangHK" />
+      <End Role="Chuyenbay" EntitySet="Chuyenbay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaiKhoan_Chucvu" Association="Self.FK_TaiKhoan_Chucvu">
+      <End Role="Chucvu" EntitySet="Chucvu" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_Booking" Association="Self.FK_Ticket_Booking">
+      <End Role="Dattruoc" EntitySet="Dattruoc" />
+      <End Role="Ve" EntitySet="Ve" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_Filght" Association="Self.FK_Ticket_Filght">
+      <End Role="Chuyenbay" EntitySet="Chuyenbay" />
+      <End Role="Ve" EntitySet="Ve" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ve_Hangve" Association="Self.FK_Ve_Hangve">
+      <End Role="Hangve" EntitySet="Hangve" />
+      <End Role="Ve" EntitySet="Ve" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ve_HanhKhach1" Association="Self.FK_Ve_HanhKhach1">
+      <End Role="HanhKhach" EntitySet="HanhKhach" />
+      <End Role="Ve" EntitySet="Ve" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ve_Hanhli" Association="Self.FK_Ve_Hanhli">
+      <End Role="Hanhli" EntitySet="Hanhli" />
+      <End Role="Ve" EntitySet="Ve" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ve_TTlienhe" Association="Self.FK_Ve_TTlienhe">
+      <End Role="TTlienhe" EntitySet="TTlienhe" />
+      <End Role="Ve" EntitySet="Ve" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
